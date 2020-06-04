@@ -1,14 +1,11 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Button } from 'antd';
 
 const Hello = () => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
-  return (
-    <div>
-      {t('hello.label')}
-    </div>
-  )
-}
+  return <Button>{t('hello.label')}</Button>;
+};
 
-export default Hello
+export default Hello;
