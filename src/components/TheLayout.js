@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import TheHeader from './TheHeader';
 import TheFooter from './TheFooter';
 
-const TheLayout = () => {
+const TheLayout = ({ children }) => {
   return (
     <div>
       <TheHeader />
-      <div>Content</div>
+      {children}
       <TheFooter />
     </div>
   );

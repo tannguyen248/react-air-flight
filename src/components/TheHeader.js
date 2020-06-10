@@ -1,37 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Menu, Carousel } from 'antd';
+import { Menu } from 'antd';
+import TheHeaderCarousel from './TheHeaderCarousel';
+import logo from '../assets/logo.png';
+import Logo from './Logo';
 
 const TheHeader = () => {
   return (
     <HeaderContainer>
-      <SlideContainer>
-        <Carousel autoplay autoplaySpeed={2000} dots={false}>
-          <Slider>
-            <img src="http://alavion.like-themes.com/wp-content/uploads/2018/02/SLIDE_01.jpg" />
-          </Slider>
-          <Slider>
-            <img src="http://alavion.like-themes.com/wp-content/uploads/2018/02/SLIDE_01.jpg" />
-          </Slider>
-          <Slider>
-            <img src="http://alavion.like-themes.com/wp-content/uploads/2018/02/SLIDE_01.jpg" />
-          </Slider>
-        </Carousel>
-      </SlideContainer>
+      <TheHeaderCarousel />
       <NavigationContainer>
         <Navigation>
-          <Logo>
-            <img
-              src="//alavion.like-themes.com/wp-content/uploads/2018/02/logo_1x_white.png"
-              alt="Alavion"
-              srcset="//alavion.like-themes.com/wp-content/uploads/2018/02/logo_1x_white.png 1x,//alavion.like-themes.com/wp-content/uploads/2018/02/logo_2x_white.png 2x"
-            />
-          </Logo>
+          <LogoContainer>
+            <Logo src={logo} alt="ACT" />
+          </LogoContainer>
           <Menu mode="horizontal">
-            <Menu.Item>Home</Menu.Item>
-            <Menu.Item>About us</Menu.Item>
-            <Menu.Item>Product</Menu.Item>
-            <Menu.Item>Contact</Menu.Item>
+            <Item>Home</Item>
+            <Item>About us</Item>
+            <Item>Product</Item>
+            <Item>Contact</Item>
           </Menu>
         </Navigation>
       </NavigationContainer>
@@ -39,9 +26,7 @@ const TheHeader = () => {
   );
 };
 
-const HeaderContainer = styled.div`
-  width: 100vw;
-`;
+const HeaderContainer = styled.div``;
 
 const NavigationContainer = styled.div`
   background-color: transparent;
@@ -53,7 +38,7 @@ const NavigationContainer = styled.div`
   left: 0;
 `;
 
-const Logo = styled.div`
+const LogoContainer = styled.div`
   width: 30%;
 `;
 
@@ -73,21 +58,10 @@ const Navigation = styled.nav`
   }
 `;
 
-const SlideContainer = styled.div`
-  overflow: hidden;
-  position: relative;
-
-  .slick-slide {
-    transition: transform 2s;
-  }
-
-  .slick-active.slick-current {
-    transform: scale(1.1);
-  }
-`;
-
-const Slider = styled.div`
-  height: 110vh;
+const Item = styled(Menu.Item)`
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
 `;
 
 export default TheHeader;
