@@ -1,12 +1,11 @@
-import React, { Component, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import './i18n';
-import Hello from './components/Hello';
-import ThankYou from './components/Thankyou';
-import LanguageSelector from './components/LanguageSelector';
 import TheLayout from './components/TheLayout';
+import AboutUs from './components/AboutUs';
 import Features from './components/Features';
 import Highlights from './components/Highlights';
 import Partners from './components/Partners';
+import MessengerContainer from './components/MessengerContainer';
 import './App.css';
 
 const App = () => {
@@ -14,10 +13,12 @@ const App = () => {
     <div>
       <Suspense fallback={null}>
         <TheLayout>
-          <Features />
+          <AboutUs />
           <Highlights />
+          <Features />
           <Partners />
         </TheLayout>
+        <MessengerContainer />
       </Suspense>
     </div>
   );

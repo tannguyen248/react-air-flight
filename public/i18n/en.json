@@ -1,4 +1,21 @@
 {
-  "hello.label": "Hello",
-  "thankyou.label": "Thank you"
+  "home": "Home",
+  "about": "About us",
+  "about.main": "AN CAT TUONG FORWARDING SERVICE COMPANY LIMITED",
+  "about.sub": "Thanks to the rich business scenarios and the challenges of user needs, ACT has accumulated and continuously polished for many years, and has supported the entire 2000+ business system inside and outside the group. It has passed the rigorous test of million-level UV products and dare to see.",
+  "services": "Services",
+  "services.air": "Air Freight",
+  "services.air.des": "International freight forwarding is often a balancing act between time, cost and environmental concerns",
+  "services.ocean": "Ocean Freight",
+  "services.ocean.des": "By leveraging our strong and long-term carrier relationships, ACT offers you flexible, reliable and secure ocean freight solutions",
+  "services.solution": "Solution",
+  "services.solution.des": "Maximizing Your International, Long and Short Haul Transportation Efficiencies",
+  "services.customs": "Customs Services",
+  "services.customs.des": "In order to provide customers with peace of mind, we provide a wide range of customs services to provide strong support for the customs clearance process",
+  "why": "WHY CHOOSE US",
+  "why.1": "International",
+  "why.2": "Fast and Safe",
+  "why.3": "Experience",
+  "contact": "Contact",
+  "partners": "CUSTOMERS"
 }

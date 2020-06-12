@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import TheHeader from './TheHeader';
 import TheFooter from './TheFooter';
 

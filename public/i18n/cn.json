@@ -1,4 +1,21 @@
 {
-  "hello.label": "你好",
-  "thankyou.label": "謝謝你"
+  "home": "主页",
+  "about": "关于我们",
+  "about.main": "安吉祥物流服務有限公司-越南",
+  "about.sub": "得益于丰富的业务场景和用户需求挑战，ACT 经历多年积累与不断打磨，已支撑整集团内外 2000+ 业务系统，通过了百万级 UV 产品的严苛考验后方敢与君见。",
+  "services": "服务",
+  "services.air": "空运",
+  "services.air.des": "国际货运代理通常是时间，成本和环境问题之间的平衡",
+  "services.ocean": "海运",
+  "services.ocean.des": "通过与我们牢固的长期承运人关系，ACT为您提供灵活，可靠和安全的海运解决方案",
+  "services.solution": "解决",
+  "services.solution.des": "最大化您的国际，长途和短途运输效率",
+  "services.customs": "海关服务",
+  "services.customs.des": "为了让客户放心，我们提供广泛的海关服务，为通关过程提供有力的支持",
+  "why": "为什么选择我们",
+  "why.1": "国际化",
+  "why.2": "快速安全",
+  "why.3": "经验",
+  "contact": "联系",
+  "partners": "众多企业正在使用"
 }

@@ -4,44 +4,9 @@ import { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
-
-const page1 = {
-  title: 'WHY CHOOSE US',
-  children: [
-    {
-      title: 'International',
-      content: '',
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/JsixxWSViARJnQbAAPkI.svg',
-      color: '#EB2F96',
-      shadowColor: 'rgba(166, 55, 112, 0.08)',
-      link: '#',
-    },
-    // {
-    //   title: '设计价值观',
-    //   content: 'Design Values',
-    //   src: 'https://gw.alipayobjects.com/zos/rmsportal/KtRzkMmxBuWCVjPbBgRY.svg',
-    //   color: '#EB2F96',
-    //   shadowColor: 'rgba(166, 55, 112, 0.08)',
-    //   link: 'https://ant.design/docs/spec/values-cn',
-    // },
-    {
-      title: 'Fast and Safe',
-      content: '',
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/pbmKMSFpLurLALLNliUQ.svg',
-      color: '#1890FF',
-      shadowColor: 'rgba(15, 93, 166, 0.08)',
-      link: '#',
-    },
-    {
-      title: 'Solution consulting',
-      content: '',
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/KtRzkMmxBuWCVjPbBgRY.svg',
-      color: '#AB33F7',
-      shadowColor: 'rgba(112, 73, 166, 0.08)',
-      link: '',
-    },
-  ],
-};
+import { withTranslation } from 'react-i18next';
+import ScrollAnim from 'rc-scroll-anim';
+var Element = ScrollAnim.Element;
 
 const pointPos = [
   { x: -90, y: -20 },
@@ -53,7 +18,7 @@ const pointPos = [
   { x: 110, y: 50 },
 ];
 
-export default class Design extends React.PureComponent {
+class Design extends React.PureComponent {
   state = {
     hoverNum: null,
   };
@@ -93,8 +58,40 @@ export default class Design extends React.PureComponent {
   };
 
   render() {
+    const { t } = this.props;
+    console.log(t);
     const { hoverNum } = this.state;
     const { isMobile } = this.props;
+    const page1 = {
+      title: t('why'),
+      children: [
+        {
+          title: t('why.1'),
+          content: '',
+          src: 'https://gw.alipayobjects.com/zos/rmsportal/JsixxWSViARJnQbAAPkI.svg',
+          color: '#EB2F96',
+          shadowColor: 'rgba(166, 55, 112, 0.08)',
+          link: '#',
+        },
+        {
+          title: t('why.2'),
+          content: '',
+          src: 'https://gw.alipayobjects.com/zos/rmsportal/pbmKMSFpLurLALLNliUQ.svg',
+          color: '#1890FF',
+          shadowColor: 'rgba(15, 93, 166, 0.08)',
+          link: '#',
+        },
+        {
+          title: t('why.3'),
+          content: '',
+          src: 'https://gw.alipayobjects.com/zos/rmsportal/KtRzkMmxBuWCVjPbBgRY.svg',
+          color: '#AB33F7',
+          shadowColor: 'rgba(112, 73, 166, 0.08)',
+          link: '',
+        },
+      ],
+    };
+
     const children = page1.children.map((item, i) => {
       const isHover = hoverNum === i;
       const pointChild = [
@@ -118,13 +115,14 @@ export default class Design extends React.PureComponent {
 
       return (
         <Col md={8} xs={24} key={i.toString()} className="page1-item">
-          <a
+          <div
             className="page1-item-link"
             href={item.link}
             target="_blank"
             onMouseEnter={() => {
               this.onMouseOver(i);
             }}
+            rel="noopener noreferrer"
             onMouseLeave={this.onMouseOut}
           >
             <TweenOneGroup
@@ -149,19 +147,19 @@ export default class Design extends React.PureComponent {
             </div>
             <div className="page1-item-title">{item.title}</div>
             <p>{item.content}</p>
-          </a>
+          </div>
         </Col>
       );
     });
 
     return (
-      <Wrapper>
+      <Wrapper id="why-choose-us">
         <div className="page-wrapper page1">
           <div className="page">
             <h1>{page1.title}</h1>
             <i />
-            <OverPack>
-              <QueueAnim key="queue" type="bottom" leaveReverse component={Row}>
+            <OverPack always={false}>
+              <QueueAnim key="queue" type="bottom" component={Row}>
                 {children}
               </QueueAnim>
             </OverPack>
@@ -172,7 +170,7 @@ export default class Design extends React.PureComponent {
   }
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled(Element)`
   .page {
     &-wrapper {
       width: 100%;
@@ -190,6 +188,7 @@ const Wrapper = styled.div`
       color: #0d1a26;
       font-weight: 400;
       text-align: center;
+      text-transform: uppercase;
     }
     > i {
       width: 64px;
@@ -283,3 +282,5 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+export default withTranslation()(Design);

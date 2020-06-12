@@ -6,17 +6,10 @@ import flight from '../assets/flight.jpg';
 
 const TheHeaderCarousel = () => {
   return (
-    <SlideContainer>
-      <Carousel autoplay autoplaySpeed={1800} dots={false}>
-        <Slider>
-          <img src={ocean} />
-        </Slider>
-        <Slider>
-          <img src={flight} />
-        </Slider>
-        {/* <Slider>
-          <img src="http://alavion.like-themes.com/wp-content/uploads/2018/02/SLIDE_01.jpg" />
-        </Slider> */}
+    <SlideContainer id="home">
+      <Carousel autoplaySpeed={1800} dots={false}>
+        <Slider backgroundSrc={ocean}></Slider>
+        <Slider backgroundSrc={flight}></Slider>
       </Carousel>
     </SlideContainer>
   );
@@ -25,7 +18,6 @@ const TheHeaderCarousel = () => {
 const SlideContainer = styled.div`
   overflow: hidden;
   position: relative;
-  width: 100%;
   height: 110vh;
 
   .slick-slide {
@@ -39,11 +31,10 @@ const SlideContainer = styled.div`
 
 const Slider = styled.div`
   height: 110vh;
-
-  img {
-    max-height: 110vh;
-    height: 110vh;
-  }
+  background-image: url(${(props) => props.backgroundSrc});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 `;
 
 export default TheHeaderCarousel;
